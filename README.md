@@ -71,11 +71,12 @@ data frames.
 4.Sklearn: To build the logistic regression model, uses various evaluation	 
 metrics like Precision, Recall and k Fold Cross Validation.
 
+There were missing values.
 
 
-Initially there was a lot of missing values in certain columns.
-These missing values were then treated and effectively removed using the dataframe.dropna() function.
-Missing values are dealt by using .dropna() function. 
+![](SCREENSHOTS/missing.png)
+
+These missing values were then treated and effectively removed using the dataframe.dropna() function. Missing values are dealt by using .dropna() function. 
 For the column ‘days_since_last_transaction’ A fair assumption can be made 
 on this column as this is number of days since last transaction in 1 year, we 
 can substitute missing values with a value greater than 1 year say 999
@@ -110,10 +111,12 @@ sure of our model performance if we use CV for testing our models.
 Soo as the scores after performing k-fold cross validation for the base line data set
 Are shown below.
 
+![](SCREENSHOTS/scores.png)
 
 
 Bar graph of the scores.
 
+![](SCREENSHOTS/scoresbar.png)
 
 
 
