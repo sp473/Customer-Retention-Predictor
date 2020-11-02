@@ -52,3 +52,71 @@ Column Name (Feature)  -	Description
 I split the original data set into a training data set and a testing data set.
 I trained the model using the training set, and I tested the model using the testing data set.
 
+
+
+
+Packages Used
+
+1.Numpy: Has advanced mathematical functions 
+
+
+2.Pandas: package dealing with creation and manipulation of data sets using 
+
+data frames.
+
+
+3.Matplotlib: for plotting various graphs.
+
+
+4.Sklearn: To build the logistic regression model, uses various evaluation	 
+metrics like Precision, Recall and k Fold Cross Validation.
+
+
+
+Initially there was a lot of missing values in certain columns.
+These missing values were then treated and effectively removed using the dataframe.dropna() function.
+Missing values are dealt by using .dropna() function. 
+For the column ‘days_since_last_transaction’ A fair assumption can be made 
+on this column as this is number of days since last transaction in 1 year, we 
+can substitute missing values with a value greater than 1 year say 999
+
+Logistic regression works best on data that has been a uniform scale, so we 
+scale the data within a particular range for an efficient model. 
+For column ‘dependents’ replace missing values with ‘0’ and for ‘occupation’ column fill 
+the values with  ‘self_employed’.
+
+
+
+Our data set is broken into three parts, one part is the training set to train our 
+model , the other part is the testing set to test the model, and finally the 
+validation test to get an estimate of how well our model performs with unkown 
+data.
+
+
+
+So we try to create two data sets, one which has all the columns(dataset 2)and another 
+one with only the columns with high impact on the target variable(dataset 1). Take each of the data sets, and split them into training set and testing set. Then create 
+the logistic regression model by using sklean.LogisticRegression package. To the logistic regression object pass the training data. Then use the testing data to evaluate 
+its performance. 
+
+
+Lets call the dataset 1 as the baseline data set. Split the baseline data set into training and testing data. Pass them to the logistic regression model. 
+
+To evaluate the model effectively I used, Cross Validation. Cross Validation is one of the most important concepts in any type of data modelling. It simply says, try to leave a sample on which you do not train the model and test the model on this sample before finalizing the model. We divide the entire population into k equal samples. Now we train models on k-1 samples and validate on 1 sample. Then, at the second iteration we train the model with a different sample held as validation.
+
+In k iterations, we have basically built model on each sample and held each of them as validation. This is a way to reduce the selection bias and reduce the variance in prediction power. Since it builds several models on different subsets of the dataset, we can be more 
+sure of our model performance if we use CV for testing our models. 
+
+Soo as the scores after performing k-fold cross validation for the base line data set
+Are shown below.
+
+
+
+Bar graph of the scores.
+
+
+
+
+
+
+
